@@ -1,0 +1,44 @@
+#!/bin/sh
+
+FROM=ovn-chassis
+TO=ovn-dedicated-chassis
+
+sed -i "s/name = '$FROM'/name = '$TO'/" src/lib/charm/openstack/ovn_chassis.py
+sed -i "/python_version = 3/a \ \ \ \ source_config_key = 'source'" \
+    src/lib/charm/openstack/ovn_chassis.py
+sed -i "s/name: $FROM/name: $TO/" src/metadata.yaml
+sed -i "s/Subordinate /Principle /" src/metadata.yaml
+sed -i "s/subordinate: true/subordinate: false/" src/metadata.yaml
+sed -i "/provides:/d" src/metadata.yaml
+sed -i "/  nova-compute:/d" src/metadata.yaml
+sed -i "/    interface: neutron-plugin/d" src/metadata.yaml
+sed -i "/    scope: container/d" src/metadata.yaml
+sed -i "/juju-info/d" src/metadata.yaml
+cat << EOF >> src/config.yaml
+  source:
+    default: distro
+    type: string
+    description: |
+      Repository from which to install OVS+OVN
+
+      May be one of the following:
+
+        distro (default)
+        ppa:somecustom/ppa (PPA name must include UCA OpenStack Release name)
+        deb url sources entry|key id
+        or a supported Ubuntu Cloud Archive pocket.
+
+      Supported Ubuntu Cloud Archive pockets include:
+
+        cloud:xenial-pike
+        cloud:xenial-queens
+        cloud:bionic-rocky
+
+      Note that updating this setting to a source that is known to
+      provide a later version of Ceph will trigger a software
+      upgrade.
+EOF
+sed -i "s/$FROM/$TO/g" src/tests/tests.yaml
+sed -i "/juju-info/d" src/tests/bundles/*.yaml
+sed -i "/  $FROM:/a \ \ \ \ num_units: 1" src/tests/bundles/*.yaml
+sed -i "s/$FROM/$TO/g" src/tests/bundles/*.yaml

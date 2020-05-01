@@ -6,3 +6,16 @@ options:
     use_venv: True
     include_system_packages: False
 repo: https://github.com/openstack/charm-ovn-controller
+config:
+  deletes:
+    - dpdk-bond-config
+    - dpdk-bond-mappings
+    - dpdk-driver
+    - dpdk-socket-cores
+    - dpdk-socket-memory
+    - enable-dpdk
+    - enable-hardware-offload
+    - enable-sriov
+    - networking-tools-source
+    - sriov-device-mappings
+    - sriov-numvfs

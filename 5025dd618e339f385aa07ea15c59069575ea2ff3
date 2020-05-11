@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_7c19e386",
+        "filename": "src/tests/bundles/bionic-ussuri.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 31289
+      },
+      "writtenOn": "2020-05-11T11:55:15Z",
+      "side": 1,
+      "message": "intentional?",
+      "revId": "5025dd618e339f385aa07ea15c59069575ea2ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

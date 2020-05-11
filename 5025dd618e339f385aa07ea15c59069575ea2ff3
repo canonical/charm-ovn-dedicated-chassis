@@ -16,6 +16,24 @@
       "revId": "5025dd618e339f385aa07ea15c59069575ea2ff3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_376dc498",
+        "filename": "src/tests/bundles/bionic-ussuri.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2020-05-11T12:05:13Z",
+      "side": 1,
+      "message": "Yes, the Ussuri UCA is in a state where we no longer need to use the proposed packages for the functional tests to pass for this charm.",
+      "parentUuid": "ff570b3c_7c19e386",
+      "revId": "5025dd618e339f385aa07ea15c59069575ea2ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

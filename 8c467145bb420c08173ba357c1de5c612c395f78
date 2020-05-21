@@ -1,0 +1,8 @@
+Code-Review+2: Corey Bryant <corey.bryant@canonical.com>
+Workflow+1: Corey Bryant <corey.bryant@canonical.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 21 May 2020 18:40:39 +0000
+Reviewed-on: https://review.opendev.org/730063
+Project: x/charm-ovn-dedicated-chassis
+Branch: refs/heads/stable/20.05

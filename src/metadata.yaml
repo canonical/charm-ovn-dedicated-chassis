@@ -17,3 +17,7 @@ extra-bindings:
 requires:
   ovsdb:
     interface: ovsdb
+provides:
+  nrpe-external-master:
+    interface: nrpe-external-master
+    scope: container

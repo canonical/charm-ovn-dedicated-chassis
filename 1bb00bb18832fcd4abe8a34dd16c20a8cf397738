@@ -1,0 +1,10 @@
+Code-Review+1: Xav Paice <xav.paice@canonical.com>
+Verified+1: Canonical CI <uosci-testing-bot@ubuntu.com>
+Code-Review+2: Dmitrii Shcherbakov <dmitrii.shcherbakov@canonical.com>
+Workflow+1: Dmitrii Shcherbakov <dmitrii.shcherbakov@canonical.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 02 Oct 2020 07:45:11 +0000
+Reviewed-on: https://review.opendev.org/755450
+Project: x/charm-ovn-dedicated-chassis
+Branch: refs/heads/master

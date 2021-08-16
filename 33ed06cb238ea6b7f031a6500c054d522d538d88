@@ -1,0 +1,9 @@
+Code-Review+2: Billy Olsen <billy.olsen@canonical.com>
+Workflow+1: Billy Olsen <billy.olsen@canonical.com>
+Verified+1: Canonical CI <uosci-testing-bot@ubuntu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 16 Aug 2021 16:55:29 +0000
+Reviewed-on: https://review.opendev.org/c/x/charm-ovn-dedicated-chassis/+/804744
+Project: x/charm-ovn-dedicated-chassis
+Branch: refs/heads/master

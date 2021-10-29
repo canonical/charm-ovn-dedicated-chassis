@@ -12,6 +12,7 @@ series:
 - groovy
 - hirsute
 - impish
+- jammy
 subordinate: false
 extra-bindings:
   data:

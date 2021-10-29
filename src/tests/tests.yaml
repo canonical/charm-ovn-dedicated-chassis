@@ -14,7 +14,9 @@ smoke_bundles:
 
 dev_bundles:
 - focal-xena
+- focal-yoga
 - impish-xena
+- jammy-yoga
 
 target_deploy_status:
   ovn-central:
@@ -42,3 +44,4 @@ tests_options:
     - groovy-victoria  # workaround for lp:1933643
     - hirsute-wallaby  # because of nrpe charm not supporting hirsute
     - impish-xena
+    - jammy-yoga

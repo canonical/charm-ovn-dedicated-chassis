@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff18f650_b684c978",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2021-11-19T19:37:00Z",
+      "side": 1,
+      "message": "focal-xena failed as expected here. The next change that adds WallabyOVNChassisCharm will fix focal-xena.",
+      "revId": "830227c8a14216c118f63bd2dd9ee144c549a9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

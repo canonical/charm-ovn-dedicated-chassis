@@ -33,6 +33,24 @@
       "message": "return _get_special_codename(version, OVN_CODENAMES) -\u003e IndexError: list index out of range",
       "revId": "632b4db0948d5f0e34cb0aea6047c3414d681bc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5470ceb1_fe4738a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2021-11-22T14:37:19Z",
+      "side": 1,
+      "message": "I think this is failing because it needs the same openstack-release fix for ovn-central, which was merged earlier today. Let\u0027s see if the recheck works.",
+      "parentUuid": "c4890c30_dcd5f573",
+      "revId": "632b4db0948d5f0e34cb0aea6047c3414d681bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

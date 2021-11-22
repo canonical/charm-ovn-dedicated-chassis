@@ -33,6 +33,23 @@
       "message": "The ovn-central charm didn\u0027t publish to the charm store very quickly. It\u0027s there now.",
       "revId": "015414bfce97f04d2cfa0969475dce861c41f3d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7162c3e6_dab8b89c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2021-11-22T18:03:20Z",
+      "side": 1,
+      "message": "charm-recheck",
+      "revId": "015414bfce97f04d2cfa0969475dce861c41f3d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

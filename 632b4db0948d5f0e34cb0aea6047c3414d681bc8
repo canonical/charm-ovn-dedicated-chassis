@@ -16,6 +16,23 @@
       "message": "charm-recheck\n\nLGTM but DNS hiccup on focal-xena. Re-triggering",
       "revId": "632b4db0948d5f0e34cb0aea6047c3414d681bc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4890c30_dcd5f573",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31289
+      },
+      "writtenOn": "2021-11-22T12:35:24Z",
+      "side": 1,
+      "message": "return _get_special_codename(version, OVN_CODENAMES) -\u003e IndexError: list index out of range",
+      "revId": "632b4db0948d5f0e34cb0aea6047c3414d681bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

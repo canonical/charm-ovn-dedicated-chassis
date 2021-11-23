@@ -50,6 +50,23 @@
       "message": "charm-recheck",
       "revId": "015414bfce97f04d2cfa0969475dce861c41f3d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1b08600_3480e34f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2021-11-23T14:48:04Z",
+      "side": 1,
+      "message": "DNS for wallaby and I think chicken/egg for xena. maybe ovn-chassis needs to land first.",
+      "revId": "015414bfce97f04d2cfa0969475dce861c41f3d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

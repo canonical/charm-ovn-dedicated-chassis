@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e233d756_2656ab52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31289
+      },
+      "writtenOn": "2021-11-25T08:07:38Z",
+      "side": 1,
+      "message": "Dependent review https://review.opendev.org/c/x/charm-ovn-dedicated-chassis/+/818595 is green",
+      "revId": "9a0782a8a8ee113d0ba1acc7f1115c4502790ff3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

@@ -34,6 +34,24 @@
       "parentUuid": "d052df4d_a0f795c5",
       "revId": "1c35d6287ab8efd11ab43f216e7f4878bf7e3e3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d7d8636_e283b999",
+        "filename": "src/tests/tests.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 31289
+      },
+      "writtenOn": "2021-11-25T08:07:38Z",
+      "side": 0,
+      "message": "Thanks! No, AFAIK the force is required before a series becomes \"official\" (i.e. jammy now) or after a series becomes EOL (i.e. groovy now). So it wouldn\u0027t be required right now for hirsute, if it were not for these inline reasons.",
+      "parentUuid": "b7c01b4c_124c6efa",
+      "revId": "1c35d6287ab8efd11ab43f216e7f4878bf7e3e3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

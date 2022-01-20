@@ -50,6 +50,23 @@
       "message": "charm-recheck",
       "revId": "547f6f01828151099f50d2f495b6ccdc84e2cc80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "116ff736_3f0cb035",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31289
+      },
+      "writtenOn": "2022-01-20T16:32:17Z",
+      "side": 1,
+      "message": "groovy-victoria is EOL",
+      "revId": "547f6f01828151099f50d2f495b6ccdc84e2cc80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

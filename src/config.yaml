@@ -19,3 +19,5 @@ options:
     description: |
       Allow the charm and packages to restart services automatically when
       required.
+  source:
+    default: cloud:focal-wallaby

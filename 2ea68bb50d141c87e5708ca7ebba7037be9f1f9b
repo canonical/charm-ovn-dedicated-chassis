@@ -16,6 +16,23 @@
       "message": "The jammy failure is due to ovn-central not being merged yet, and I think we can see passed that on good faith. The focal-yoga failure looks like a transient issue.",
       "revId": "2ea68bb50d141c87e5708ca7ebba7037be9f1f9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebee19f9_3956ca29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2022-04-06T16:43:25Z",
+      "side": 1,
+      "message": "charm-recheck",
+      "revId": "2ea68bb50d141c87e5708ca7ebba7037be9f1f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

@@ -33,6 +33,23 @@
       "message": "charm-recheck",
       "revId": "2ea68bb50d141c87e5708ca7ebba7037be9f1f9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cc9af7b_52bf3a58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-04-07T10:54:15Z",
+      "side": 1,
+      "message": "Merged the func test PR as well.",
+      "revId": "2ea68bb50d141c87e5708ca7ebba7037be9f1f9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

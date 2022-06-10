@@ -1,9 +1,9 @@
 variables:
-  openstack-origin: &openstack-origin cloud:focal-xena
+  openstack-origin: &openstack-origin distro
 
 local_overlay_enabled: False
 
-series: focal
+series: kinetic
 
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
@@ -44,7 +44,7 @@ applications:
     to:
       - '3'
     channel: latest/edge
-
+  
   ovn-central:
     charm: ch:ovn-central
     num_units: 3
@@ -56,9 +56,6 @@ applications:
       - '6'
     channel: latest/edge
 
-  nrpe:
-    charm: cs:nrpe
-
   ovn-dedicated-chassis:
     charm: ../../../ovn-dedicated-chassis.charm
     num_units: 2
@@ -67,6 +64,7 @@ applications:
     to:
       - '7'
       - '8'
+
 
 relations:
 
@@ -80,5 +78,3 @@ relations:
     - 'ovn-central:ovsdb'
   - - 'ovn-dedicated-chassis:certificates'
     - 'vault:certificates'
-  - - 'ovn-dedicated-chassis:nrpe-external-master'
-    - 'nrpe:nrpe-external-master'

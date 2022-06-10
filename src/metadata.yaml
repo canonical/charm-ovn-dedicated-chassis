@@ -7,8 +7,8 @@ description: |
 tags:
 - networking
 series:
-- focal
 - jammy
+- kinetic
 subordinate: false
 extra-bindings:
   data:

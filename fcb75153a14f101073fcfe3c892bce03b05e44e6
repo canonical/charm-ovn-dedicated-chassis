@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "fcb75153a14f101073fcfe3c892bce03b05e44e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5496051_7bb67694",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2022-08-24T18:08:13Z",
+      "side": 1,
+      "message": "The jammy-yoga test fails with an install hook failure for ovn-dedicated-chassis due to:\n\nERROR: Could not find a version that satisfies the requirement setuptools\u003e\u003d42 (from versions: 41.6.0)\nERROR: No matching distribution found for setuptools\u003e\u003d42 \n\nIt seems the problem is that the wheelhouse.txt python_version checks are not working as expected.\n\nI was able to get beyond the install hook failure locally by modifying the wheelhouse.txt in https://github.com/juju-solutions/layer-basic to remove all of the python_version logic such that it implicitly supported py310 only. E.g.\n\n-setuptools\u003c42;python_version \u003c \u00273.8\u0027\n-# https://github.com/juju-solutions/layer-basic/issues/201\n-setuptools\u003c62.2.0;python_version \u003e\u003d \u00273.8\u0027\n-setuptools-scm\u003c\u003d1.17.0;python_version \u003c \u00273.8\u0027\n-# https://github.com/pypa/setuptools_scm/issues/722\n-setuptools-scm\u003c7;python_version \u003e\u003d \u00273.8\u0027\n-flit_core;python_version \u003e\u003d \u00273.8\u0027\n+setuptools\u003c62.2.0\n+setuptools-scm\u003c7\n+flit_core\n",
+      "revId": "fcb75153a14f101073fcfe3c892bce03b05e44e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

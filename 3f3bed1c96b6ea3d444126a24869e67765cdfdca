@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b7c81be_2fd93daf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-08-29T14:20:03Z",
+      "side": 1,
+      "message": "\njammy-yoga\n\nhttps://openstack-ci-reports.ubuntu.com/artifacts/2f5/854819/1/check/jammy-yoga/2f51479/job-output.txt\n\n2022-08-26 17:48:33.928363 | focal-medium | 2022-08-26 17:48:33 [ERROR] unit-ovn-dedicated-chassis-1.log: 2022-08-26 17:47:32 WARNING unit.ovn-dedicated-chassis/1.install logger.go:60       ERROR: No matching distribution found for flit_core\u003c3,\u003e\u003d2\n2022-08-26 17:48:33.928454 | focal-medium | 2022-08-26 17:48:33 [ERROR] unit-ovn-dedicated-chassis-1.log: 2022-08-26 17:47:32 WARNING unit.ovn-dedicated-chassis/1.install logger.go:60       [end of output]\n\nfocal-yoga:\nhttps://openstack-ci-reports.ubuntu.com/artifacts/693/854819/1/check/focal-yoga/6935f9d/job-output.txt\n\n2022-08-26 17:48:15.191102 | focal-medium | 2022-08-26 17:48:15 [ERROR] unit-ovn-dedicated-chassis-1.log: 2022-08-26 17:47:08 WARNING unit.ovn-dedicated-chassis/1.install logger.go:60       Looking in links: wheelhouse\n2022-08-26 17:48:15.191165 | focal-medium | 2022-08-26 17:48:15 [ERROR] unit-ovn-dedicated-chassis-1.log: 2022-08-26 17:47:08 WARNING unit.ovn-dedicated-chassis/1.install logger.go:60       ERROR: Could not find a version that satisfies the requirement hatchling (from versions: none)\n2022-08-26 17:48:15.191228 | focal-medium | 2022-08-26 17:48:15 [ERROR] unit-ovn-dedicated-chassis-1.log: 2022-08-26 17:47:08 WARNING unit.ovn-dedicated-chassis/1.install logger.go:60       ERROR: No matching distribution found for hatchling\n2022-08-26 17:48:15.191290 | focal-medium | 2022-08-26 17:48:15 [ERROR] unit-ovn-dedicated-chassis-1.log: 2022-08-26 17:47:08 WARNING unit.ovn-dedicated-chassis/1.install logger.go:60       [end of output]\n\nfocal-xena:\n\n2022-08-26 17:53:47.905432 | focal-medium | 2022-08-26 17:53:47 [ERROR] unit-ovn-dedicated-chassis-0.log: 2022-08-26 17:52:43 WARNING unit.ovn-dedicated-chassis/0.install logger.go:60       Looking in links: wheelhouse\n2022-08-26 17:53:47.905588 | focal-medium | 2022-08-26 17:53:47 [ERROR] unit-ovn-dedicated-chassis-0.log: 2022-08-26 17:52:43 WARNING unit.ovn-dedicated-chassis/0.install logger.go:60       ERROR: Could not find a version that satisfies the requirement hatchling (from versions: none)\n2022-08-26 17:53:47.905720 | focal-medium | 2022-08-26 17:53:47 [ERROR] unit-ovn-dedicated-chassis-0.log: 2022-08-26 17:52:43 WARNING unit.ovn-dedicated-chassis/0.install logger.go:60       ERROR: No matching distribution found for hatchling\n2022-08-26 17:53:47.905846 | focal-medium | 2022-08-26 17:53:47 [ERROR] unit-ovn-dedicated-chassis-0.log: 2022-08-26 17:52:43 WARNING unit.ovn-dedicated-chassis/0.install logger.go:60       [end of output]\n",
+      "revId": "3f3bed1c96b6ea3d444126a24869e67765cdfdca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

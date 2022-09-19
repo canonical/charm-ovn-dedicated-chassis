@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecde1283_4f1ba2c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-09-19T21:08:46Z",
+      "side": 1,
+      "message": "The first test case to fail is test_prefer_chassis_as_gw which is not related to the Func-Test-PR change.\n\nThis is actually due to a regression introduced in one of the previous charm-layer-ovn commits which changed how the situation with bridge-interface-mappings set to an empty string is handled.\n\n2022-09-19 17:28:48.237324 | focal-medium | 2022-09-19 17:28:48 [INFO] FAIL: test_prefer_chassis_as_gw (zaza.openstack.charm_tests.ovn.tests.ChassisCharmOperationTest)\n2022-09-19 17:28:48.237469 | focal-medium | 2022-09-19 17:28:48 [INFO] Confirm effect of prefer-chassis-as-gw configuration option.\n2022-09-19 17:28:48.237605 | focal-medium | 2022-09-19 17:28:48 [INFO] ----------------------------------------------------------------------\n2022-09-19 17:28:48.237886 | focal-medium | 2022-09-19 17:28:48 [INFO] Traceback (most recent call last):\n2022-09-19 17:28:48.238025 | focal-medium | 2022-09-19 17:28:48 [INFO]   File \"/home/ubuntu/src/review.opendev.org/x/charm-ovn-dedicated-chassis/src/.tox/func-target/lib/python3.8/site-packages/zaza/openstack/charm_tests/ovn/tests.py\", line 156, in test_prefer_chassis_as_gw\n2022-09-19 17:28:48.238152 | focal-medium | 2022-09-19 17:28:48 [INFO]     self.assertEqual(\n2022-09-19 17:28:48.238277 | focal-medium | 2022-09-19 17:28:48 [INFO] AssertionError: \u0027\u0027 !\u003d \u0027enable-chassis-as-gw\u0027\n2022-09-19 17:28:48.238401 | focal-medium | 2022-09-19 17:28:48 [INFO] + enable-chassis-as-gw\n",
+      "revId": "d327f4872b8a65c936404d193e5108b5f0237c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

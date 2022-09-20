@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cbfe292_5f38f0ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-09-20T15:37:08Z",
+      "side": 1,
+      "message": "Forgot to remove placement directives in one of the bundles:\n\n2022-09-20 14:35:23.173417 | focal-medium | 2022-09-20 14:35:23 [INFO] ERROR cannot deploy bundle: the provided bundle has the following errors:\n2022-09-20 14:35:23.173540 | focal-medium | 2022-09-20 14:35:23 [INFO] placement \"4\" refers to a machine not defined in this bundle\n2022-09-20 14:35:23.173709 | focal-medium | 2022-09-20 14:35:23 [INFO] placement \"5\" refers to a machine not defined in this bundle\n2022-09-20 14:35:23.173848 | focal-medium | 2022-09-20 14:35:23 [INFO] placement \"6\" refers to a machine not defined in this bundle\n2022-09-20 14:35:23.174014 | focal-medium | 2022-09-20 14:35:23 [INFO] placement \"7\" refers to a machine not defined in this bundle\n2022-09-20 14:35:23.174168 | focal-medium | 2022-09-20 14:35:23 [INFO] placement \"8\" refers to a machine not defined in this bundle\n",
+      "revId": "c44c39f759829826e24eba7b864d22a6d75dc6ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

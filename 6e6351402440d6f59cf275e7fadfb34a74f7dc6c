@@ -16,6 +16,23 @@
       "message": "With https://github.com/openstack-charmers/charm-layer-ovn/pull/71 merged this can now be rechecked.",
       "revId": "6e6351402440d6f59cf275e7fadfb34a74f7dc6c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a08bfbf5_4277ee62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-09-20T07:11:35Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "6e6351402440d6f59cf275e7fadfb34a74f7dc6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

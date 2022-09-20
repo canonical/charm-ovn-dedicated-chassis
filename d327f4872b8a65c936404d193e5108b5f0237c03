@@ -33,6 +33,41 @@
       "message": "charm-recheck",
       "revId": "d327f4872b8a65c936404d193e5108b5f0237c03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "427d04d6_96ab1475",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-09-20T07:11:11Z",
+      "side": 1,
+      "message": "Specifically, a BridgeInterfaceMap will have a zero length so the `if not bim` check will get triggered whereas there are two distinct cases: when `bim is None` and when it is a BridgeInterfaceMap with a zero length.\n\nA PDB trace for the empty string case is shown below:\n\n\u003e /var/lib/juju/agents/unit-ovn-dedicated-chassis-0/charm/lib/charms/ovn_charm.py(1102)configure_bridges(\n)\n-\u003e if self.check_if_paused() !\u003d (None, None):\n(Pdb) l\n1097 \n1098        def configure_bridges(self):\n1099            \"\"\"Configure Open vSwitch bridges ports and interfaces.\"\"\"\n1100            import pdb\n1101            pdb.set_trace()\n1102 -\u003e         if self.check_if_paused() !\u003d (None, None):\n1103                ch_core.hookenv.log(\u0027Unit is paused, defer Open vSwitch bridge \u0027\n1104                                    \u0027port interface configuration tasks.\u0027,\n1105                                    level\u003dch_core.hookenv.INFO)\n1106                return\n1107            bim \u003d self.options.bridge_interface_map\n(Pdb) n\n\u003e /var/lib/juju/agents/unit-ovn-dedicated-chassis-0/charm/lib/charms/ovn_charm.py(1107)configure_bridges(\n)\n-\u003e bim \u003d self.options.bridge_interface_map\n(Pdb) n\n\u003e /var/lib/juju/agents/unit-ovn-dedicated-chassis-0/charm/lib/charms/ovn_charm.py(1108)configure_bridges(\n)\n-\u003e if not bim:\n(Pdb) l\n1103                ch_core.hookenv.log(\u0027Unit is paused, defer Open vSwitch bridge \u0027\n1104                                    \u0027port interface configuration tasks.\u0027,\n1105                                    level\u003dch_core.hookenv.INFO)\n1106                return\n1107            bim \u003d self.options.bridge_interface_map\n1108 -\u003e         if not bim:\n1109                return\n1110 \n1111            bond_config \u003d os_context.BondConfig()\n1112            ch_core.hookenv.log(\u0027BridgePortInterfaceMap: \"{}\"\u0027.format(bim.items()),\n1113                                level\u003dch_core.hookenv.DEBUG)\n(Pdb) bim\n\u003ccharmhelpers.contrib.openstack.context.BridgePortInterfaceMap object at 0x7f085ed26820\u003e\n(Pdb) n\n\u003e /var/lib/juju/agents/unit-ovn-dedicated-chassis-0/charm/lib/charms/ovn_charm.py(1109)configure_bridges(\n)\n-\u003e return\n(Pdb) bim\n\u003ccharmhelpers.contrib.openstack.context.BridgePortInterfaceMap object at 0x7f085ed26820\u003e\n\n(Pdb) self.options.bridge_interface_map\n\u003ccharmhelpers.contrib.openstack.context.BridgePortInterfaceMap object at 0x7f085ed2fe80\u003e\n(Pdb) not bim\nTrue\n\n(Pdb) bim.__dict__\n{\u0027_map\u0027: defaultdict(\u003cfunction BridgePortInterfaceMap.__init__.\u003clocals\u003e.\u003clambda\u003e at 0x7f085ecc21f0\u003e, {}),\n \u0027_ifname_mac_map\u0027: defaultdict(\u003cclass \u0027list\u0027\u003e, {\u0027ens3\u0027: [\u0027fa:16:3e:a6:9c:bd\u0027]}), \u0027_mac_ifname_map\u0027: {\u0027fa\n:16:3e:a6:9c:bd\u0027: \u0027ens3\u0027}, \u0027_mac_pci_address_map\u0027: {}}\n\n(Pdb) bool(bim)\nFalse\n\n\n(Pdb) debug bool(bim)\nENTERING RECURSIVE DEBUGGER\n\u003e \u003cstring\u003e(1)\u003cmodule\u003e()\n((Pdb)) s\n--Call--\n\u003e /var/lib/juju/agents/unit-ovn-dedicated-chassis-0/.venv/lib/python3.8/site-packages/charmhelpers/contri\nb/openstack/context.py(2978)__len__()\n-\u003e def __len__(self):\n((Pdb)) l\n2973            :returns: Iterator\n2974            :rtype: Iterator[any]\n2975            \"\"\"\n2976            return self._map.__iter__()\n2977 \n2978 -\u003e     def __len__(self):\n2979            \"\"\"Provide a Dict-like interface, measure the length of internal map.\n2980 \n2981            :returns: Length\n2982            :rtype: int\n2983            \"\"\"\n\n((Pdb)) n\n\u003e /var/lib/juju/agents/unit-ovn-dedicated-chassis-0/.venv/lib/python3.8/site-packages/charmhelpers/contri\nb/openstack/context.py(2984)__len__()\n-\u003e return len(self._map)\n\n((Pdb)) len(self._map)\n0",
+      "parentUuid": "ecde1283_4f1ba2c3",
+      "revId": "d327f4872b8a65c936404d193e5108b5f0237c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81a02386_35e1db2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2022-09-20T07:11:11Z",
+      "side": 1,
+      "message": "With https://github.com/openstack-charmers/charm-layer-ovn/pull/71 merged this can now be rechecked.",
+      "revId": "d327f4872b8a65c936404d193e5108b5f0237c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

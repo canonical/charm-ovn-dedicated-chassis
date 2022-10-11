@@ -16,6 +16,23 @@
       "message": "Last failure due to infrastructure issue",
       "revId": "8e47acd497409675073134b4d38f44d9c8defb17",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c99f1303_420feec7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2022-10-11T18:53:54Z",
+      "side": 1,
+      "message": "charm-recheck ",
+      "revId": "8e47acd497409675073134b4d38f44d9c8defb17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

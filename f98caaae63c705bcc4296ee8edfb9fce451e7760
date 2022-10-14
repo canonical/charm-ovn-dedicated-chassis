@@ -16,6 +16,23 @@
       "message": "Transient issue:\n2022-10-14 06:49:20.199950 | focal-medium | 2022-10-14 06:49:20 [INFO] ERROR cannot deploy bundle: refreshing charm \"ch:amd64/jammy/vault-84\": Post \"https://api.charmhub.io/v2/charms/refresh\": net/http: TLS handshake timeout\n2022-10-14 06:49:33.714532 | focal-medium | 2022-10-14 06:49:33 [INFO] Located charm \"nrpe\" in charm-store, channel stable\n2022-10-14 06:49:53.824273 | focal-medium | 2022-10-14 06:49:53 [INFO] ERROR cannot deploy bundle: cannot resolve charm or bundle \"ovn-central\": resolving with preferred channel: Post \"https://api.charmhub.io/v2/charms/refresh\": net/http: TLS handshake timeout\n2022-10-14 06:50:07.242378 | focal-medium | 2022-10-14 06:50:07 [INFO] Located charm \"nrpe\" in charm-store, channel stable\n2022-10-14 06:50:27.422464 | focal-medium | 2022-10-14 06:50:27 [INFO] ERROR cannot deploy bundle: cannot resolve charm or bundle \"ovn-central\": resolving with preferred channel: Post \"https://api.charmhub.io/v2/charms/refresh\": net/http: TLS handshake timeout\n",
       "revId": "f98caaae63c705bcc4296ee8edfb9fce451e7760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f45c106b_19182fb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2022-10-14T09:03:43Z",
+      "side": 1,
+      "message": "charm-recheck",
+      "revId": "f98caaae63c705bcc4296ee8edfb9fce451e7760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

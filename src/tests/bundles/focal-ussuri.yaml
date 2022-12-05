@@ -2,6 +2,7 @@ local_overlay_enabled: False
 
 variables:
   openstack-origin: &openstack-origin distro
+  ovn-central-channel: &ovn-central-channel 20.03/stable
 
 series: focal
 
@@ -54,7 +55,7 @@ applications:
       - '4'
       - '5'
       - '6'
-    channel: openstack-ussuri/edge
+    channel: *ovn-central-channel
 
   nrpe:
     charm: cs:nrpe
@@ -64,6 +65,7 @@ applications:
     num_units: 2
     options:
       source: *openstack-origin
+      enable-version-pinning: true
     to:
       - '7'
       - '8'

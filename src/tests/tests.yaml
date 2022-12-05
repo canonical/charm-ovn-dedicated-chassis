@@ -3,7 +3,6 @@ charm_name: ovn-dedicated-chassis
 gate_bundles:
 - bionic-ussuri
 - focal-ussuri
-- focal-victoria
 
 smoke_bundles:
 - focal-ussuri

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b51d254e_ccaaa171",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20870
+      },
+      "writtenOn": "2023-01-05T21:02:41Z",
+      "side": 1,
+      "message": "LGTM; particularly like the removal of pip.sh and the tox inception!",
+      "revId": "fa3721f369b357e6bb4a90fb605a429d4445b7ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

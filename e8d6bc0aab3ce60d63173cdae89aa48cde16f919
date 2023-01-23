@@ -16,6 +16,23 @@
       "message": "charm-recheck\n\njammy-zed timeout error in test_deferred_restarts",
       "revId": "e8d6bc0aab3ce60d63173cdae89aa48cde16f919",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c314ad9_2cbab4fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2023-01-23T21:33:11Z",
+      "side": 1,
+      "message": "charm-recheck\n\nThe following was merged today. Let\u0027s see if it helps: https://github.com/openstack-charmers/zosci-config/pull/259",
+      "revId": "e8d6bc0aab3ce60d63173cdae89aa48cde16f919",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

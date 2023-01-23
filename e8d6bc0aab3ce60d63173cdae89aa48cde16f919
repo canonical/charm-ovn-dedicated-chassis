@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4e17b7f_a5985e5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2023-01-23T19:43:00Z",
+      "side": 1,
+      "message": "charm-recheck\n\njammy-zed timeout error in test_deferred_restarts",
+      "revId": "e8d6bc0aab3ce60d63173cdae89aa48cde16f919",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

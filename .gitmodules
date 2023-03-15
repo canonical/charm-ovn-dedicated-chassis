@@ -1,0 +1,3 @@
+[submodule "charm-layer-ovn"]
+	path = charm-layer-ovn
+	url = https://github.com/mastier/charm-layer-ovn.git

@@ -1,0 +1,3 @@
+[submodule "layers/charm-layer-ovn"]
+	path = layers/charm-layer-ovn
+	url = ssh://git@github.com/mastier/charm-layer-ovn.git

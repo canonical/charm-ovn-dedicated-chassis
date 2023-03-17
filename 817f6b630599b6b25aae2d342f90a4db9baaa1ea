@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5af8f99a_1796939c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8992
+      },
+      "writtenOn": "2023-03-17T18:06:33Z",
+      "side": 1,
+      "message": "looking at the latest jammy/zed failure, the failure is on test_deferred_restarts which I think is fixed [here](https://github.com/juju/charm-helpers/pull/760) - its pending further review, but it should be simple to use that PR for the test as a verification.",
+      "revId": "817f6b630599b6b25aae2d342f90a4db9baaa1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

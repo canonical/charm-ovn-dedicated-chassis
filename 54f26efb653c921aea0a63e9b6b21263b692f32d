@@ -33,6 +33,23 @@
       "message": "Upon reproducing it locally I can see that the issue is that service stops are not handled properly which seems to be relevant to https://bugs.launchpad.net/charm-ovn-chassis/+bug/2012553 https://review.opendev.org/c/x/charm-ovn-chassis/+/878921 - it was fixed for ovn-chassis but not for ovn-dedicated-chassis.\n\n$ juju status\nModel              Controller            Cloud/Region             Version  SLA          Timestamp\nzaza-6f0fd0392fa0  dmitriis-serverstack  serverstack/serverstack  2.9.32   unsupported  09:24:57Z\n\nApp                    Version  Status  Scale  Charm                  Channel  Rev  Exposed  Message\novn-central            23.03.0  active      3  ovn-central            edge      91  no       Unit is ready (leader: ovnnb_db, ovnsb_db)\novn-dedicated-chassis  23.03.0  active      2  ovn-dedicated-chassis             0  no       Services queued for stop: ovs-record-hostname.service, ovs-vswitchd.service, ovsdb-server.service\nvault                  1.8.8    active      1  vault                  edge     110  no       Unit is ready (active: true, mlock: enabled)\n\nUnit                      Workload  Agent  Machine  Public address  Ports              Message\novn-central/0*            active    idle   0        10.5.2.142      6641/tcp,6642/tcp  Unit is ready (leader: ovnnb_db, ovnsb_db)\novn-central/1             active    idle   1        10.5.1.243      6641/tcp,6642/tcp  Unit is ready\novn-central/2             active    idle   2        10.5.3.99       6641/tcp,6642/tcp  Unit is ready (northd: active)\novn-dedicated-chassis/0   active    idle   3        10.5.1.169                         Services queued for stop: ovs-record-hostname.service, ovs-vswitchd.service, ovsdb-server.service\novn-dedicated-chassis/1*  active    idle   4        10.5.1.18                          Services queued for stop: ovs-record-hostname.service, ovs-vswitchd.service, ovsdb-server.service\nvault/0*                  active    idle   5        10.5.3.69       8200/tcp           Unit is ready (active: true, mlock: enabled)",
       "revId": "54f26efb653c921aea0a63e9b6b21263b692f32d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e040695_61557835",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24824
+      },
+      "writtenOn": "2023-04-26T10:15:59Z",
+      "side": 1,
+      "message": "Raised to https://review.opendev.org/c/x/charm-ovn-dedicated-chassis/+/881544 to fix the issue resulting in the func test failure.",
+      "revId": "54f26efb653c921aea0a63e9b6b21263b692f32d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

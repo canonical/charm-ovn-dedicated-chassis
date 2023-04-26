@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fe0c391_8be02071",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2023-04-26T14:48:54Z",
+      "side": 1,
+      "message": "kinetic metadata etc to be dropped in a follow up",
+      "revId": "4bcf39ae51b237731a4014601f8246493ece1c0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

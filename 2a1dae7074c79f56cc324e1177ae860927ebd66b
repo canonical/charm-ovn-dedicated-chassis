@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d241ab0_03e5f9bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2023-05-04T08:53:46Z",
+      "side": 1,
+      "message": "a nit in-line but not blocking for me",
+      "revId": "2a1dae7074c79f56cc324e1177ae860927ebd66b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7e01adb_d4479f45",
+        "filename": "src/build.lock",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2023-05-04T08:53:46Z",
+      "side": 1,
+      "message": "nit: we did proactively cut a `stable/22.03` branch for the layer, which we could put in here now. However, that is also something we could do on the first backport, so no requirement for re-spinning because of this",
+      "revId": "2a1dae7074c79f56cc324e1177ae860927ebd66b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

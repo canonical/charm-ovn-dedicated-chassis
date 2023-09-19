@@ -16,6 +16,23 @@
       "message": "charm-recheck",
       "revId": "b4dcf852d4c2da189af10fc59cca87e61bc6dc07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c75882b7_de04e513",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2023-09-19T15:48:23Z",
+      "side": 1,
+      "message": "It looks like this branch needs to pin attrs to 22.2.0\n\nERROR: No matching distribution found for hatchling\n\nattrs 22.2.0 https://github.com/python-attrs/attrs/blob/22.2.0/pyproject.toml # no hatchling\nvs\nattrs 23.1.0 https://github.com/python-attrs/attrs/blob/23.1.0/pyproject.toml # requires hatchling",
+      "revId": "b4dcf852d4c2da189af10fc59cca87e61bc6dc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

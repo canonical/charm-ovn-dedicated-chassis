@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9fab909_382a9abe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2023-12-07T14:46:16Z",
+      "side": 1,
+      "message": "charm-recheck intermittent issue: `Failed instance creation: Get \"https://cloud-images.ubuntu.com/buildd/releases/jammy/release-20220426/jammy-server-cloudimg-amd64-lxd_combined.tar.gz\": read tcp 172.16.0.127:44984-\u003e185.125.190.37:443: read: connection reset by peer\\n\u0027`",
+      "revId": "aaddc75b0007691139ca78d8320d7f28d51a6d1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

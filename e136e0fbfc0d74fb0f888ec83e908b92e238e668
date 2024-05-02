@@ -16,6 +16,23 @@
       "message": "LGTM, thanks!",
       "revId": "e136e0fbfc0d74fb0f888ec83e908b92e238e668",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd853ee2_8e8a1a3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2024-05-02T16:35:56Z",
+      "side": 1,
+      "message": "LGTM. The other patch that was in the queue got abandoned.",
+      "revId": "e136e0fbfc0d74fb0f888ec83e908b92e238e668",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

@@ -1,0 +1,10 @@
+Verified+2: Zuul
+Code-Review+2: James Page <james.page@canonical.com>
+Verified+1: Canonical CI <uosci-testing-bot@ubuntu.com>
+Workflow+1: James Page <james.page@canonical.com>
+Submitted-by: Zuul
+Submitted-at: Wed, 08 May 2024 10:59:33 +0000
+Reviewed-on: https://review.opendev.org/c/x/charm-ovn-dedicated-chassis/+/917946
+Comments-Total: 2
+Project: x/charm-ovn-dedicated-chassis
+Branch: refs/heads/stable/24.03

@@ -65,6 +65,7 @@ applications:
     num_units: 2
     options:
       source: *openstack-origin
+      enable-version-pinning: true
     to:
       - '7'
       - '8'

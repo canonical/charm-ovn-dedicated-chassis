@@ -64,14 +64,19 @@ jobs:
       - lint
       - unit
       - coverage
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.image }}
+    outputs:
+      DEB_HOST_ARCH: ${{ steps.build.outputs.DEB_HOST_ARCH }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
-          sudo apt install tox
+          sudo apt install tox dpkg-dev
           sudo snap install charmcraft --channel 3.x/stable --classic
           sudo snap install lxd --channel 5.21/stable
           sudo snap set lxd daemon.group=adm
@@ -86,14 +91,16 @@ jobs:
           sudo ip6tables -F FORWARD || true
 
       - name: Build charm
+        id: build
         run: |
           tox -e build
+          dpkg-architecture >> $GITHUB_OUTPUT
 
       - name: Store charm as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ovn-dedicated-chassis-charm
-          path: ./ovn-dedicated-chassis_amd64.charm
+          name: ovn-dedicated-chassis-charm-${{ steps.build.outputs.DEB_HOST_ARCH }}
+          path: ./ovn-dedicated-chassis_${{ steps.build.outputs.DEB_HOST_ARCH }}.charm
           retention-days: 7
 
   parse_tags:
@@ -131,13 +138,14 @@ jobs:
 
   functest:
     name: Functional Tests
-    runs-on: [self-hosted, linux, X64, large, noble]
     needs:
       - build
       - parse_tags
     strategy:
       matrix:
         bundle: ["noble-caracal"]
+        arch: [X64, arm64]
+    runs-on: [self-hosted, linux, "${{ matrix.arch }}", large, noble]
     env:
       DEBIAN_FRONTEND: noninteractive
     steps:
@@ -147,7 +155,7 @@ jobs:
       - name: Download built charm
         uses: actions/download-artifact@v4
         with:
-          name: ovn-dedicated-chassis-charm
+          name: ovn-dedicated-chassis-charm-${{ needs.build.outputs.DEB_HOST_ARCH }}
  
       - name: Install dependencies
         run: |

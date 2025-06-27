@@ -184,7 +184,7 @@ jobs:
               bootstrap: true
           EOF
 
-          sudo concierge prepare -c /tmp/concierge.yaml
+          sudo concierge --trace --verbose prepare -c /tmp/concierge.yaml
 
           # Create second bridged network needed by the functional tests
           lxc network create second --type=bridge

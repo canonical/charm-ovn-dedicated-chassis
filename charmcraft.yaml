@@ -28,7 +28,7 @@ parts:
       - MAKEFLAGS: -j$(nproc)
       - CARGO_HTTP_MULTIPLEXING: "false"
 
-base: ubuntu@24.04
+base: ubuntu@22.04
 platforms:
   amd64:
     build-on: amd64

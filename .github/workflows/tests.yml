@@ -64,14 +64,21 @@ jobs:
       - lint
       - unit
       - coverage
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runner:
+          - self-hosted-linux-amd64-noble-medium
+          - self-hosted-linux-arm64-noble-medium
+          - self-hosted-linux-ppc64el-noble-edge
+          - self-hosted-linux-s390x-noble-edge
+    runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
-          sudo apt install tox
+          sudo apt-get -y install tox dpkg-dev
           sudo snap install charmcraft --channel 3.x/stable --classic
           sudo snap install lxd --channel 5.21/stable
           sudo snap set lxd daemon.group=adm
@@ -86,14 +93,16 @@ jobs:
           sudo ip6tables -F FORWARD || true
 
       - name: Build charm
+        id: build
         run: |
           tox -e build
+          dpkg-architecture >> $GITHUB_OUTPUT
 
       - name: Store charm as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ovn-dedicated-chassis-charm
-          path: ./ovn-dedicated-chassis_amd64.charm
+          name: ovn-dedicated-chassis-charm-${{ steps.build.outputs.DEB_HOST_ARCH }}
+          path: ./ovn-dedicated-chassis_${{ steps.build.outputs.DEB_HOST_ARCH }}.charm
           retention-days: 7
 
   parse_tags:
@@ -131,32 +140,59 @@ jobs:
 
   functest:
     name: Functional Tests
-    runs-on: [self-hosted, linux, X64, large, noble]
     needs:
       - build
       - parse_tags
     strategy:
+      fail-fast: false
       matrix:
         bundle: ["noble-caracal"]
+        runner:
+          - self-hosted-linux-amd64-noble-large
+          - self-hosted-linux-arm64-noble-large
+          - self-hosted-linux-ppc64el-noble-edge
+          - self-hosted-linux-s390x-noble-edge
+    runs-on: ${{ matrix.runner }}
     env:
       DEBIAN_FRONTEND: noninteractive
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: arch
+        id: arch
+        run: |
+          sudo apt-get -y install dpkg-dev
+          dpkg-architecture >> $GITHUB_OUTPUT
  
       - name: Download built charm
         uses: actions/download-artifact@v4
         with:
-          name: ovn-dedicated-chassis-charm
+          name: ovn-dedicated-chassis-charm-${{ steps.arch.outputs.DEB_HOST_ARCH }}
  
       - name: Install dependencies
         run: |
-          sudo apt -yqq install tox
-          sudo snap install concierge --classic
+          sudo apt-get -y install \
+              build-essential \
+              cargo \
+              libffi-dev \
+              libssl-dev \
+              libxml2-dev \
+              libxslt1-dev \
+              python3-dev \
+              pkgconf \
+              rustc \
+              tox
+
+          # pending canonical/concierge#76 we need to build from source
+          sudo snap install go --classic
+          go install github.com/canonical/concierge@v1.0.3
+
           sudo snap install juju-wait --classic
  
       - name: Prepare Environment for functional tests
         run: |
+          if [ "${{ steps.arch.outputs.DEB_HOST_ARCH }}" == "amd64" ]; then
           # Use concierge to setup LXD, microk8s and bootstrap juju controller
           cat <<EOF >>/tmp/concierge.yaml
           juju:
@@ -187,17 +223,22 @@ jobs:
           sudo microk8s stop
           sudo microk8s start
 
-          sudo concierge prepare -c /tmp/concierge.yaml
+          sudo $HOME/go/bin/concierge prepare -c /tmp/concierge.yaml
+          else
+          sudo $HOME/go/bin/concierge prepare -p machine
+          fi
 
           # Create second bridged network needed by the functional tests
           lxc network create second --type=bridge
 
+          if [ "${{ steps.arch.outputs.DEB_HOST_ARCH }}" == "amd64" ]; then
           # Add microk8s as a kubernetes substrate to the Juju controller
           sudo microk8s status --wait
           # The kubernetes API is not always immediately available to use, even if
           # microk8s status reports ready state. These retries ensure that we don't
           # fail the test unnecessarily
           (r=30;while ! juju add-k8s mk8s --controller concierge-lxd ; do ((--r))||exit;sleep 2;done)
+          fi
 
       - name: Install custom functional test repository
         if: ${{ needs.parse_tags.outputs.zaza_pr != '' }}
@@ -220,14 +261,24 @@ jobs:
       - name: Deploy COS lite bundle
         working-directory: ./src/tests/bundles/
         run: |
+          if [ "${{ steps.arch.outputs.DEB_HOST_ARCH }}" == "amd64" ]; then
           juju add-model cos-lite mk8s
           juju deploy ./cos-lite.yaml --trust --overlay ./offers-overlay.yaml
           juju-wait -v
           juju status
+          fi
 
       - name: Run functional tests for bundle ${{ matrix.bundle }}
         working-directory: ./src/
         run: |
+          tox -e func-target --notest
+          # XXX somehow bump cryptography in zaza and zaza-openstack-tests?
+          # ImportError: /home/ubuntu/actions-runner/_work/charm-ovn-dedicated-chassis/charm-ovn-dedicated-chassis/src/.tox/func-target/lib/python3.12/site-packages/cryptography/hazmat/bindings/_openssl.abi3.so: undefined symbol: FIPS_mode
+
+          .tox/func-target/bin/pip install -U cryptography==44.0.1 || true
+          # XXX find better solution to this
+          sed -ie 's/amd64/${{ steps.arch.outputs.DEB_HOST_ARCH }}/' \
+              tests/bundles/${{ matrix.bundle }}.yaml
           tox -e func-target -- ${{ matrix.bundle }}
 
       - name: Generate crash dumps

@@ -3,30 +3,32 @@ variables:
 
 local_overlay_enabled: False
 
-series: noble
-
 applications:
 
   vault:
     charm: ch:vault
     num_units: 1
-    # The vault raft support is currently only available for jammy
-    series: jammy
-    channel: latest/edge
+    constraints: arch=amd64
+    channel: 1.8/stable
+    base: ubuntu@22.04
+    arch: amd64
 
   ovn-central:
     charm: ch:ovn-central
     num_units: 3
+    constraints: arch=amd64
     options:
       source: *openstack-origin
     channel: latest/edge
+    base: ubuntu@24.04
 
   ovn-dedicated-chassis:
     charm: ../../../ovn-dedicated-chassis_amd64.charm
     num_units: 2
-    constraints: "virt-type=virtual-machine mem=4G"
+    constraints: "arch=amd64 virt-type=virtual-machine mem=4G"
     options:
       source: *openstack-origin
+    base: ubuntu@24.04
 
   grafana-agent:
     charm: ch:grafana-agent
